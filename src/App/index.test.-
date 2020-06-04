@@ -1,0 +1,12 @@
+import { render, cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import App from "./index";
+
+afterEach(cleanup);
+
+describe("MyComponent", () => {
+  it("increments counter", () => {
+    const { getByText } = render(<App />);
+    expect(getByText("Hi")).toBeInTheDocument();
+  });
+});
